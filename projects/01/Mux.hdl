@@ -9,10 +9,15 @@
  *       b otherwise
  */
 
+// a b sel out
+// 0 0 0
+
 CHIP Mux {
     IN a, b, sel;
     OUT out;
 
     PARTS:
-    // Put your code here:
+    AndNot(a=a, b=sel, out=aAndNotSel);
+    And(a=b, b=sel, out=bAndSel);
+    Or(a=aAndNotSel, b=bAndSel, out=out);
 }

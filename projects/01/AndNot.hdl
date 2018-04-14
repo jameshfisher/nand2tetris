@@ -1,0 +1,8 @@
+CHIP AndNot {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    Not(in=b, out=notB);
+    And(a=a, b=notB, out=out);
+}
