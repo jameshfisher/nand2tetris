@@ -3,8 +3,8 @@ CHIP Mux4Way {
   OUT out;
   PARTS:
   Nor(a=sel[0], b=sel[1], out=sel00);
-  AndNot(a=sel[1], b=sel[0], out=sel01);
-  AndNot(a=sel[0], b=sel[1], out=sel10);
+  AndNot(a=sel[0], b=sel[1], out=sel01);
+  AndNot(a=sel[1], b=sel[0], out=sel10);
   And(a=sel[0], b=sel[1], out=sel11);
   And(a=a, b=sel00, out=aAndSel00);
   And(a=b, b=sel01, out=bAndSel01);
