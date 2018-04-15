@@ -2,7 +2,7 @@ CHIP Mux4Way {
   IN a, b, c, d, sel[2];
   OUT out;
   PARTS:
-  OneHot2(in=sel, out0=sel0, out1=sel1, out2=sel2, out3=sel3);
+  OneHot2(in=sel, out[0]=sel0, out[1]=sel1, out[2]=sel2, out[3]=sel3);
   And(a=a, b=sel0, out=aAndSel0);
   And(a=b, b=sel1, out=bAndSel1);
   And(a=c, b=sel2, out=cAndSel2);

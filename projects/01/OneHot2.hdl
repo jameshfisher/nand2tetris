@@ -1,9 +1,9 @@
 CHIP OneHot2 {
   IN in[2];
-  OUT out0, out1, out2, out3;
+  OUT out[4];
   PARTS:
-  Nor(a=in[0], b=in[1], out=out0);
-  AndNot(a=in[0], b=in[1], out=out1);
-  AndNot(a=in[1], b=in[0], out=out2);
-  And(a=in[0], b=in[1], out=out3);
+  Nor(a=in[0], b=in[1], out=out[0]);
+  AndNot(a=in[0], b=in[1], out=out[1]);
+  AndNot(a=in[1], b=in[0], out=out[2]);
+  And(a=in[0], b=in[1], out=out[3]);
 }
