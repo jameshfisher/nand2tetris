@@ -1,0 +1,8 @@
+// FIXME this is the only way I can think of to copy one pin to another
+CHIP Id {
+  IN in;
+  OUT out;
+  PARTS:
+  Not(in=in, out=notIn);
+  Not(in=notIn, out=out);
+}
