@@ -1,0 +1,7 @@
+CHIP Inc {
+  IN in, doBefore;
+  OUT out, doAfter;
+  PARTS:
+  Xor(a=in, b=doBefore, out=out);
+  And(a=in, b=doBefore, out=doAfter);
+}

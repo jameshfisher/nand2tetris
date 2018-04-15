@@ -13,5 +13,20 @@ CHIP Inc16 {
     OUT out[16];
 
     PARTS:
-   // Put you code here:
+    Inc(in=in[0], doBefore=true, out=out[0], doAfter=do0);
+    Inc(in=in[1], doBefore=do0, out=out[1], doAfter=do1);
+    Inc(in=in[2], doBefore=do1, out=out[2], doAfter=do2);
+    Inc(in=in[3], doBefore=do2, out=out[3], doAfter=do3);
+    Inc(in=in[4], doBefore=do3, out=out[4], doAfter=do4);
+    Inc(in=in[5], doBefore=do4, out=out[5], doAfter=do5);
+    Inc(in=in[6], doBefore=do5, out=out[6], doAfter=do6);
+    Inc(in=in[7], doBefore=do6, out=out[7], doAfter=do7);
+    Inc(in=in[8], doBefore=do7, out=out[8], doAfter=do8);
+    Inc(in=in[9], doBefore=do8, out=out[9], doAfter=do9);
+    Inc(in=in[10], doBefore=do9, out=out[10], doAfter=do10);
+    Inc(in=in[11], doBefore=do10, out=out[11], doAfter=do11);
+    Inc(in=in[12], doBefore=do11, out=out[12], doAfter=do12);
+    Inc(in=in[13], doBefore=do12, out=out[13], doAfter=do13);
+    Inc(in=in[14], doBefore=do13, out=out[14], doAfter=do14);
+    Inc(in=in[15], doBefore=do14, out=out[15], doAfter=do15);
 }
