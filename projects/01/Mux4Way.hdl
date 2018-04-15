@@ -2,13 +2,10 @@ CHIP Mux4Way {
   IN a, b, c, d, sel[2];
   OUT out;
   PARTS:
-  Nor(a=sel[0], b=sel[1], out=sel00);
-  AndNot(a=sel[0], b=sel[1], out=sel01);
-  AndNot(a=sel[1], b=sel[0], out=sel10);
-  And(a=sel[0], b=sel[1], out=sel11);
-  And(a=a, b=sel00, out=aAndSel00);
-  And(a=b, b=sel01, out=bAndSel01);
-  And(a=c, b=sel10, out=cAndSel10);
-  And(a=d, b=sel11, out=dAndSel11);
-  Or4Way(in[0]=aAndSel00, in[1]=bAndSel01, in[2]=cAndSel10, in[3]=dAndSel11, out=out);
+  OneHot2(in=sel, out0=sel0, out1=sel1, out2=sel2, out3=sel3);
+  And(a=a, b=sel0, out=aAndSel0);
+  And(a=b, b=sel1, out=bAndSel1);
+  And(a=c, b=sel2, out=cAndSel2);
+  And(a=d, b=sel3, out=dAndSel3);
+  Or4Way(in[0]=aAndSel0, in[1]=bAndSel1, in[2]=cAndSel2, in[3]=dAndSel3, out=out);
 }
