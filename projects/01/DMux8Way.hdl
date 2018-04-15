@@ -16,5 +16,13 @@ CHIP DMux8Way {
     OUT a, b, c, d, e, f, g, h;
 
     PARTS:
-    // Put your code here:
+    OneHot3(in=sel, out[0]=sel0, out[1]=sel1, out[2]=sel2, out[3]=sel3, out[4]=sel4, out[5]=sel5, out[6]=sel6, out[7]=sel7);
+    And(a=in, b=sel0, out=a);
+    And(a=in, b=sel1, out=b);
+    And(a=in, b=sel2, out=c);
+    And(a=in, b=sel3, out=d);
+    And(a=in, b=sel4, out=e);
+    And(a=in, b=sel5, out=f);
+    And(a=in, b=sel6, out=g);
+    And(a=in, b=sel7, out=h);
 }

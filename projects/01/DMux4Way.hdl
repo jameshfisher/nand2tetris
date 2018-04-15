@@ -16,5 +16,9 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
-    // Put your code here:
+    OneHot2(in=sel, out[0]=sel00, out[1]=sel01, out[2]=sel10, out[3]=sel11);
+    And(a=in, b=sel00, out=a);
+    And(a=in, b=sel01, out=b);
+    And(a=in, b=sel10, out=c);
+    And(a=in, b=sel11, out=d);
 }
