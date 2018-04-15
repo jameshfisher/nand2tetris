@@ -1,0 +1,14 @@
+CHIP OneHot3 {
+  IN in[3];
+  OUT out[8];
+  PARTS:
+  OneHot2(in=in[0..1], out[0]=sub0, out[1]=sub1, out[2]=sub2, out[3]=sub3);
+  AndNot(a=sub0, b=in[2], out=out[0]);
+  AndNot(a=sub1, b=in[2], out=out[1]);
+  AndNot(a=sub2, b=in[2], out=out[2]);
+  AndNot(a=sub3, b=in[2], out=out[3]);  
+  And(a=sub0, b=in[2], out=out[4]);
+  And(a=sub1, b=in[2], out=out[5]);
+  And(a=sub2, b=in[2], out=out[6]);
+  And(a=sub3, b=in[2], out=out[7]);
+}

@@ -1,0 +1,15 @@
+CHIP Mux8Way {
+  IN a, b, c, d, e, f, g, h, sel[3];
+  OUT out;
+  PARTS:
+  OneHot3(in=sel, out[0]=sel0, out[1]=sel1, out[2]=sel2, out[3]=sel3, out[4]=sel4, out[5]=sel5, out[6]=sel6, out[7]=sel7);
+  And(a=a, b=sel0, out=aAndSel0);
+  And(a=b, b=sel1, out=bAndSel1);
+  And(a=c, b=sel2, out=cAndSel2);
+  And(a=d, b=sel3, out=dAndSel3);
+  And(a=e, b=sel4, out=eAndSel4);
+  And(a=f, b=sel5, out=fAndSel5);
+  And(a=g, b=sel6, out=gAndSel6);
+  And(a=h, b=sel7, out=hAndSel7);
+  Or8Way(in[0]=aAndSel0, in[1]=bAndSel1, in[2]=cAndSel2, in[3]=dAndSel3, in[4]=eAndSel4, in[5]=fAndSel5, in[6]=gAndSel6, in[7]=hAndSel7, out=out);
+}
